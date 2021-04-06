@@ -20,5 +20,9 @@ describe Scraper do
          " \e[0m\e[32mhttps://www.microsoft.com/en-us/p/sekiro-shadows-die-twice-goty-edition/bqd5wrrp2d6q\e[0m"]
       )
     end
+
+    it 'returns an message to the user if the passed name is outside UTF-8' do 
+      expect(search('josé')).to eql('This is not a valid input')
+    end
   end
 end

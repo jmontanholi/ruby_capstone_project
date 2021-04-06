@@ -42,6 +42,10 @@ class Scraper
 end
 
 def search(game_name)
-  scraper = Scraper.new(game_name)
-  scraper.scrape == [] ? 'No results' : scraper.scrape
+  if game_name.ascii_only?
+    scraper = Scraper.new(game_name)
+    scraper.scrape == [] ? 'No results' : scraper.scrape
+  else
+    "This is not a valid input"
+  end
 end
