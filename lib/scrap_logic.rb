@@ -26,19 +26,20 @@ class Scraper
   def create_game_hash(games)
     games.map do |game|
       begin
-        puts Rainbow("\nName: ").cyan + Rainbow(game.css('h3.c-subheading-6').children[0].text.to_s).green
-        puts Rainbow('Price: ').cyan +
-             Rainbow(game.css('div.c-price').children[1].children[0].text.gsub(' ', '').gsub("\r", '').gsub("\n",
-                                                                                                            '')).green
-        puts Rainbow('Link: ').cyan + Rainbow("https://www.microsoft.com#{game.css('a').attr('href').value}").green
+        "#{Rainbow("\nName: ").cyan}#{Rainbow(game.css('h3.c-subheading-6').children[0].text.to_s).green}
+#{Rainbow('Price: ').cyan}" \
+        "#{Rainbow(game.css('div.c-price').children[1].children[0].text.gsub(' ', '').gsub("\r", '').gsub("\n",
+                                                                                                          '')).green}
+#{Rainbow('Link: ').cyan}#{Rainbow("https://www.microsoft.com#{game.css('a').attr('href').value}").green}"
       rescue StandardError
-        puts Rainbow("\nName: ").cyan + Rainbow(game.css('h3.c-subheading-6').children[0].text.to_s).green
-        puts Rainbow('Price: ').cyan + Rainbow('Nothing specified, check link for more options').green
-        puts Rainbow('Link: ').cyan + Rainbow("https://www.microsoft.com#{game.css('a').attr('href').value}").green
+        "#{Rainbow("\nName: ").cyan}#{Rainbow(game.css('h3.c-subheading-6').children[0].text.to_s).green}
+#{Rainbow('Price: ').cyan}" \
+        "#{Rainbow('Nothing specified, check the link for more informations').green}
+#{Rainbow('Link: ').cyan}#{Rainbow("https://www.microsoft.com#{game.css('a').attr('href').value}").green}"
       end
     end
   end
 end
 
 test = Scraper.new('call of duty')
-test.scrape
+puts test.scrape
