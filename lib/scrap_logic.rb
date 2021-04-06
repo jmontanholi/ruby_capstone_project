@@ -40,3 +40,8 @@ class Scraper
     end
   end
 end
+
+def search(game_name)
+  scraper = Scraper.new(game_name)
+  scraper.scrape == [] ? 'No results' : scraper.scrape
+end
