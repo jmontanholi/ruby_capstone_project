@@ -2,6 +2,7 @@ require 'nokogiri'
 require 'httparty'
 require 'pry'
 require 'rainbow'
+require './lib/scrap_logic.rb'
 
 def greeter 
   puts 'Welcome to the Microsoft Store Scraper. To start press enter.'
@@ -15,6 +16,9 @@ def search
     puts "Please enter a valid name"
     game_name = gets.chomp.to_s
   end
+
+  scraper = Scraper.new(game_name)
+  puts scraper.scrape
 end
 
 greeter

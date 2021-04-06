@@ -40,6 +40,3 @@ class Scraper
     end
   end
 end
-
-test = Scraper.new('call of duty')
-puts test.scrape
