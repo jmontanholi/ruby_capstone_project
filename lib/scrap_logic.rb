@@ -36,6 +36,3 @@ class Scraper
   end
 
 end
-
-test = Scraper.new('call of duty')
-test.scrape

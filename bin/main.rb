@@ -1,2 +1,3 @@
 require 'nokogiri'
-require 'httparty'
+require 'open-uri'
+require 'pry'
