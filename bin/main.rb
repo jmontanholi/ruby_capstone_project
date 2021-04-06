@@ -1,0 +1,2 @@
+require 'nokogiri'
+require 'httparty'
