@@ -18,8 +18,8 @@ def search
   end
 
   scraper = Scraper.new(game_name)
-  puts scraper.scrape
+  scraper.scrape == [] ? 'No results' : scraper.scrape
 end
 
 greeter
-search
+puts search
