@@ -1,8 +1,9 @@
 require 'nokogiri'
-require 'httparty'
+require 'open-uri'
+require 'pry'
 
 class Scraper 
-  attr_reader :url, :game_name
+  attr_reader :url, :game_name, :results_number, :parsed_page, :games
 
   def initialize(game_name)
     @game_name = game_name
@@ -10,11 +11,19 @@ class Scraper
   end
 
   def parsing(url)
-    unparsed_url = HTTParty.get(url)
-    Nokogiri::HTML(unparsed_url)
+    page = Nokogiri::HTML(URI.open(url))
   end
 
   def scrape
     parsed_page = parsing(@url)
+    games = parsed_page.css('h3.c-subheading-6')
+    results_number = games.count
+  end
+
+  def create_game_hash
   end
 end
+
+test = Scraper.new('sekiro')
+binding.pry
+puts 'somethign'
