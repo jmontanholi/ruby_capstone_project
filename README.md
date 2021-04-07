@@ -24,16 +24,16 @@ This particular scraper searches a game inside the microsoft store for you.
   * GitHub account.
   * Git, GitHub desktop or commandline.
   * Ruby installed.
-  * All gems previously mentioned installed locally.
+  * All gems previously mentioned installed locally to do this run "gem install name_of_gem".
   * Rspec installed locally if you want to run the tests.
   
 ### How to use the scraper
   #### To use the scrapper follow the steps below.
-  * Clone this repository into your local machine.
-  * Open the directory with the commandline or git bash.
-  * Run "ruby bin/main.rb".
+  * Clone this repository into your local machine using github desktop, commandline or git bash (git clone sshkey or http link).
+  * Open the directory with the commandline or git bash (cd followed by the path in your computer).
+  * Run "ruby bin/main.rb" in your commandline/git bash.
   * Press enter.
-  * Insert the name you want to search.
+  * Insert the name of the game you want to search.
 ## Authors
 
 👤 **João Vítor Montanholi Nunes**
