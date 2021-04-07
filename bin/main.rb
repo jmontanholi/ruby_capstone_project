@@ -10,11 +10,11 @@ def greeter
 end
 greeter
 
-end_parameter = String.new
+end_parameter = ''
 until end_parameter == 'exit'
   puts Rainbow('Please insert the name of the game you want to search for. Please use no accents, e.g. "~"').cyan
   game_name = gets.chomp.to_s
-  if !game_name.ascii_only?
+  unless game_name.ascii_only?
     until game_name.ascii_only? && game_name.match(/\w{3,}/i)
       puts Rainbow('Please enter a valid name with no accents, e.g. "~"').red
       game_name = gets.chomp.to_s
@@ -24,4 +24,3 @@ until end_parameter == 'exit'
   puts Rainbow('If you want to search again press enter, if you want to exit please insert "exit"').cyan
   end_parameter = gets.chomp.to_s.downcase
 end
-

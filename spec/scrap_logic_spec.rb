@@ -2,7 +2,6 @@ require './lib/scrap_logic'
 
 describe Scraper do
   test_object = Scraper.new('sekiro')
-  false_test = Scraper.new('kairo')
   describe '#scrape' do
     it 'returns an array of hashes containing the name, price and link of a game in microsoft store.' do
       expect(test_object.scrape).to eql(
