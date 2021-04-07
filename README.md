@@ -24,7 +24,7 @@ This particular scraper searches a game inside the microsoft store for you.
   * GitHub account.
   * Git, GitHub desktop or commandline.
   * Ruby installed.
-  * All gems previously mentioned installed locally to do this run "gem install name_of_gem".
+  * All gems previously mentioned can be installed using this command on your commandline "bundle install"
   * Rspec installed locally if you want to run the tests.
   
 ### How to use the scraper
