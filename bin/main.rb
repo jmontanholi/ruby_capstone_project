@@ -2,7 +2,7 @@ require 'nokogiri'
 require 'httparty'
 require 'pry'
 require 'rainbow'
-require './lib/scrap_logic'
+require_relative '../lib/scrap_logic'
 
 def greeter
   puts Rainbow('Welcome to the Microsoft Store Scraper. To start press enter.').cyan

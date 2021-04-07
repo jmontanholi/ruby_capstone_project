@@ -1,4 +1,4 @@
-require './lib/scrap_logic'
+require_relative '../lib/scrap_logic'
 
 describe Scraper do
   test_object = Scraper.new('sekiro')
