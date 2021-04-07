@@ -3,13 +3,15 @@ require_relative '../lib/scrap_logic'
 describe Scraper do
   test_object = Scraper.new('sekiro')
   false_object = Scraper.new('')
-  describe 'parsing' do 
-    it 'returns a parsed HTML dom that ruby can work with.' do 
+  describe 'parsing' do
+    it 'returns a parsed HTML dom that ruby can work with.' do
       expect(test_object.parsing('https://www.microsoft.com/en-us/search/shop/games?q=sekiro')).to be_a Object
     end
 
     it 'returns an error if the URL have an character that is not UTF-8' do
-      expect {test_object.parsing("https://www.microsoft.com/en-us/search/shop/games?q=jos\u00E9")}.to raise_error(URI::Error)
+      expect do
+        test_object.parsing("https://www.microsoft.com/en-us/search/shop/games?q=jos\u00E9")
+      end.to raise_error(URI::Error)
     end
   end
 
@@ -22,7 +24,7 @@ describe Scraper do
       )
     end
 
-    it 'returns an empty array if no results are found' do 
+    it 'returns an empty array if no results are found' do
       expect(false_object.scrape).to eql([])
     end
   end
